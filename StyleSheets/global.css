@@ -1,0 +1,20 @@
+.content {
+   /*width: 80%*/
+}
+textarea {
+   width: 100%
+}
+
+.submit-btn {
+   margin : 10px 0px 10px 0px;
+   background-color: #C4F0FF;
+   color: #00baf2;
+}
+
+.panel {
+   margin-top : 20px;
+}
+
+.note-content {
+   background-color: #D6E8FF;
+}

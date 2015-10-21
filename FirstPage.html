@@ -1,0 +1,58 @@
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Note manager</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+   <link rel="stylesheet" href="StyleSheets/global.css">
+</head>
+<body>
+   <nav class="navbar-fluid navbar-default navbar">
+     <div class="container">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="#">Note +</a>
+         <p class="navbar-text">The best note manager in the world !</p>
+      </div>
+      <div class="collapse navbar-collapse">
+         <ul class="nav navbar-nav navbar-right">
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Current User <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+               <li><a href="#">My profile</a></li>
+               <li role="separator" class="divider"></li>
+               <li><a href="#">Disconnect</a></li>
+             </ul>
+           </li>
+         </ul>
+      </div>
+     </div>
+   </nav>
+
+   <div class="container" ng-app="NoteManager" ng-controller="NoteManagerController">
+      <div class="content" >
+         <form ng-submit="SubmitNote()">
+            <textarea class="form-control" rows="5" placeholder="Put your note here" ng-model="notetext"></textarea>
+            <input class="btn pull-right submit-btn" type="submit" name="button" value="Zip!" />
+         </form>
+
+         <div>
+            <h4>Your note list</h4>
+            <div class="panel note-content" ng-repeat="note in NoteLst">
+               <div class="panel-heading">
+                  <p>
+                     {{ note.text }}
+                  </p>
+                  <small>-- {{ note.author }} --</small>
+                  <small class="pull-right">{{ note.date }}</small>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <script src="Javascript/App.js"></script>
+</body>
+</html>
